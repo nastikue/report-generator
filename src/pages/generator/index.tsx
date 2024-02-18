@@ -1,7 +1,7 @@
 import {InputElement} from "@/components/InputElement";
 import {IReport} from "@/typings/report";
 import Link from "next/link";
-import {InputHTMLAttributes,useState} from "react";
+import {ChangeEvent,useState} from "react";
 enum Stage {
   TitlePage,
   InfoPage,
@@ -14,14 +14,14 @@ const GeneratorPage=() => {
   const [report,setReport]=useState('');
   const [reportData,setReportData]=useState({} as IReport);
 
-  const handleReportChange=(event: Event) => {
-    const {name,value}=event.target as InputHTMLAttributes<string>;
+  const handleReportChange=(event: ChangeEvent<HTMLInputElement>) => {
+    const {name,value}=event.target;
     if(name) {
       setReportData((prevData) => ({...prevData,[name]: value}));
     }
   };
-  const handleMentorNameChange=(event: Event) => {
-    const {name,value}=event.target as InputHTMLAttributes<string>;
+  const handleMentorNameChange=(event: ChangeEvent<HTMLInputElement>) => {
+    const {name,value}=event.target;
     if(name) {
       const newReportData={...reportData};
       const prevMentor={...(newReportData.mentor||{})};
@@ -34,8 +34,8 @@ const GeneratorPage=() => {
       });
     }
   };
-  const handleTechnologyChange=(event: Event) => {
-    const {name,value}=event.target as InputHTMLAttributes<string>;
+  const handleTechnologyChange=(event: ChangeEvent<HTMLInputElement>) => {
+    const {name,value}=event.target;
     if(name) {
       const keys=name.split('_');
       const newReportData={...reportData};
@@ -51,8 +51,8 @@ const GeneratorPage=() => {
       setReportData(newReportData);
     }
   };
-  const handleRoleDescriptionChange=(event: Event) => {
-    const {name,value}=event.target as InputHTMLAttributes<string>;
+  const handleRoleDescriptionChange=(event: ChangeEvent<HTMLInputElement>) => {
+    const {name,value}=event.target;
     if(name) {
       const keys=name.split('_');
       const newReportData={...reportData};
