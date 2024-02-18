@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-const ResustPage=() => {
+const ResultPage=({report}: {report: string}) => {
+  const copyToClipboard=() => {
+    navigator.clipboard.writeText(report);
+  }
   return <div>
     <h1>Well done!</h1>
-
-
-
     <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
       <Link
         href="/generator"
@@ -41,4 +41,4 @@ const ResustPage=() => {
   </div>
 };
 
-export default ResustPage;
+export default ResultPage;
