@@ -1,7 +1,6 @@
-import {IReport} from "@/typings/report"
+import { IReport } from '@/typings/report';
 
-export const GeneratedReport=({report}: {report: IReport}) => {
-  console.log(report);
-  return <div>{report.projectName}</div>
-
-}
+export const GeneratedReport = ({ report }: { report: IReport }) => {
+    console.log(report);
+    return <div>{report.projectName}</div>;
+};
